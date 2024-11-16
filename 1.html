@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me, Porshi?</title>
+    <link rel="stylesheet" href="2.css">
+    <style>
+        /* General Styles and Animation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #ff9a8b, #ff6a88); /* Gradient background */
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Animated Header */
+        h1 {
+            font-size: 3rem;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s 1s forwards;
+        }
+
+        /* Love Story Section Animation */
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s 2s forwards;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s 3s forwards;
+        }
+
+        .proposal-question {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s 4s forwards;
+        }
+
+        .cta {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            font-weight: bold;
+        }
+
+        .cta .yes-btn {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .cta .no-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .cta button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 5rem;
+            color: white;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Slide-Up Animation */
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        /* Heartbeat Animation */
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .message {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 2s forwards, slideUp 2s 5s forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for Content -->
+    <div class="container">
+        <!-- Heart Icon with Animation -->
+        <div class="heart">❤️</div>
+
+        <!-- Proposal Heading -->
+        <h1>Porshi, my love...</h1>
+
+        <!-- Love Story -->
+        <h2>Our Journey Together</h2>
+        <p>From the moment we met, I knew you were someone special. Every day with you has been full of laughter, love, and memories. I cherish every moment and every smile you've shared with me. And now, I'm ready to take the next step...</p>
+
+        <!-- Proposal Question -->
+        <div class="proposal-question">
+            Will you marry me and make me the happiest person in the world?
+        </div>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="cta">
+            <button class="yes-btn" onclick="showMessage('Yes')">Yes, Forever!</button>
+            <button class="no-btn" onclick="showMessage('No')">Not Yet...</button>
+        </div>
+
+        <!-- Message area where the new message will be shown -->
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        // JavaScript function to show a new message
+        function showMessage(response) {
+            let messageElement = document.getElementById("message");
+            
+            if (response === 'Yes') {
+                messageElement.textContent = "Thank you for saying Yes! I can't wait to spend forever with you.";
+            } else {
+                messageElement.textContent = "I understand, take your time. I'll be here waiting for you!";
+            }
+            
+            // Make the message visible by changing the opacity
+            messageElement.style.opacity = 1;
+        }
+    </script>
+
+</body>
+</html>
